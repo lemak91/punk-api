@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Beers from './components/beer';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+
 
 function App() {
   return (

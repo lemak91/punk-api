@@ -15,4 +15,7 @@ await axios('https://api.punkapi.com/v2/beers?per_page=10')
     })
     .catch(err => err);
 
+
+
+
 export default beers;
