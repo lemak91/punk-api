@@ -1,9 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-import beers from './api.js';
-
-console.log(beers);
 
 function App() {
   return (
@@ -25,5 +22,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
