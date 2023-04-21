@@ -1,14 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
-import axios from 'axios';
+import beers from './api.js';
 
-const data = axios('https://api.punkapi.com/v2/beers')
-  .then(res => res.data);
-
-c(data);
-
-
+console.log(beers);
 
 function App() {
   return (
