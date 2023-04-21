@@ -1,6 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 
+import axios from 'axios';
+
+const data = axios('https://api.punkapi.com/v2/beers')
+  .then(res => res.data);
+
+c(data);
+
+
+
 function App() {
   return (
     <div className="App">
