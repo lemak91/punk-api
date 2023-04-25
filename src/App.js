@@ -1,31 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
-import Beers from './components/beer';
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-
+import "./App.css";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import BeerResults from "./components/beer-results.jsx";
 
 function App() {
+  const [beers, setBeers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://api.punkapi.com/v2/beers?per_page=10")
+        .then((response) => {
+          setBeers(response.data);
+        });
+    };
+    fetchData();
+  }, []);
+
+  console.log(beers);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Beer API</p>
+        <BeerResults beers={beers} />
       </header>
     </div>
   );
 }
-
 
 export default App;
